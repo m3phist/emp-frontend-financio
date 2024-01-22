@@ -1,0 +1,32 @@
+<!-- emp-details.component.html -->
+<div mat-dialog-title>
+  <h1>Employee Details</h1>
+</div>
+<div mat-dialog-content class="content">
+  <div class="row">
+    <p><strong>First Name:</strong> {{ employee.firstName }}</p>
+    <p><strong>Last Name:</strong> {{ employee.lastName }}</p>
+  </div>
+  <p><strong>Gender:</strong> {{ employee.gender }}</p>
+  <p><strong>Date of Birth:</strong> {{ employee.dob | date }}</p>
+  <p><strong>NRIC/Passport No.:</strong> {{ employee.nid }}</p>
+  <p><strong>Email:</strong> {{ employee.email }}</p>
+  <p><strong>Address:</strong> {{ employee.address }}</p>
+  <p><strong>Contact:</strong> {{ employee.contact }}</p>
+  <p><strong>Department:</strong> {{ employee.department }}</p>
+  <p><strong>Designation:</strong> {{ employee.designation }}</p>
+  <p><strong>Joining Date:</strong> {{ employee.joiningDate | date }}</p>
+  <p>
+    <strong>Salary:</strong> {{ employee.salary | currency : "RM" }} per annum
+  </p>
+  <p>
+    <strong>Status:</strong>
+    <span [style.color]="getStatusColor(employee.status)" class="bold-status">
+      {{ employee.status | uppercase }}
+    </span>
+  </p>
+  <!-- Add more details as needed -->
+</div>
+<div mat-dialog-actions class="action">
+  <button mat-raised-button [mat-dialog-close]="true">Close</button>
+</div>
